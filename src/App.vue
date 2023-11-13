@@ -22,9 +22,10 @@ import MainComponent from "./components/MainComponent.vue";
     },
     methods: {
       getCards(){
-        const url = this.store.apiUrl + store.endPoint.name;
+        const url = this.store.apiUrl + store.endPoint;
         axios.get(url).then((response) => {
-          store.cardList = response.data.results;
+          store.cardList = response.data.data;
+          console.log(response.data.data)
         });
       },
     },
