@@ -22,7 +22,7 @@ import MainComponent from "./components/MainComponent.vue";
     },
     methods: {
       getCards(){
-        const url = this.store.apiUrl + store.endPoint.cards;
+        const url = this.store.apiUrl + store.endPoint.name;
         axios.get(url).then((response) => {
           store.cardList = response.data.results;
         });
