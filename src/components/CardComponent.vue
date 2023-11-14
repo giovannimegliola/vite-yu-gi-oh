@@ -11,12 +11,17 @@
 </template>
 
 <script>
+import { store } from '../data/store';
+
 export default {
   name: "CardComponent",
   props: {
     image: String,
     name: String,
     archetype: String
+  },
+  mounted() {
+    console.log('Image URL:', this.image);
   },
 };
 </script>
