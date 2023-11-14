@@ -1,13 +1,12 @@
 <template>
   <header class="container">
-    <h1>{{ title }}</h1>
+    <h1>Yu-Gi-Oh API</h1>
   </header>
 </template>
 
 <script>
 export default {
   name: "HeaderComponent",
-  props: ["title"],
   data() {
     return {};
   },
