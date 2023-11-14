@@ -3,6 +3,7 @@
     <HeaderComponent class="text-center" />
   </header>
   <main class="container">
+    <SearchBar @filterChange="filteredList" />
     <MainComponent />
   </main>
 </template>
@@ -12,9 +13,10 @@ import {store} from "./data/store.js";
 import axios from "axios";
 import HeaderComponent from "./components/HeaderComponent.vue";
 import MainComponent from "./components/MainComponent.vue";
+import SearchBar from "./components/SearchBar.vue";
   export default {
     name: "App",
-    components: {HeaderComponent, MainComponent},
+    components: {HeaderComponent, MainComponent, SearchBar},
     data (){
       return{
         store
@@ -28,7 +30,14 @@ import MainComponent from "./components/MainComponent.vue";
           console.log(response.data.data);
         });
       },
-    },
+      filteredList(selectedValue){
+        const apiUrl = `https://db.ygoprodeck.com/api/v7/cardinfo.php?archetype=${selectedValue}`;
+        axios.get(apiUrl).then((response) => {    
+        store.filteredCardList = response.data.data;
+        console.log(response.data.data);
+      });  
+    }
+  },
     created() {
       this.getCards();
     },
