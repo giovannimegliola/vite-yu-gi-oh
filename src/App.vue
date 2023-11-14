@@ -41,7 +41,9 @@ import SearchBar from "./components/SearchBar.vue";
     created() {
       this.getCards();
     },
-    
+    computed(){
+      
+    }
   };
 </script>
 
