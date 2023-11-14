@@ -31,3 +31,4 @@ npm run build
 Create a new project using Vite and Vue 3 and define the components necessary to structure the layout as the attached screenshot.
 When the page loads, make an ajax call to the Yu Gi Oh API: https://db.ygoprodeck.com/api/v7/cardinfo.php
 and with the data returned, print a card for each card.
+Then add a search bar to filter results by archetype.
